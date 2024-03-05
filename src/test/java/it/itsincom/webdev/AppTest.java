@@ -12,7 +12,11 @@ class AppTest {
      * Rigorous Test.
      */
     @Test
-    void testApp() {
-        assertEquals(1, 1);
+    public void parseDoubleShouldNotWorkOnEmptyString() {
+        try {
+            double value = App.parseDouble("");
+        } catch (IllegalArgumentException e) {
+            ;
+        }
     }
 }

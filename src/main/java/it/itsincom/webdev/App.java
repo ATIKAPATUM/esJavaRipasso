@@ -1,4 +1,5 @@
 package it.itsincom.webdev;
+
 /**
  * Hello world!
  */
@@ -16,7 +17,12 @@ public final class App {
     }
 
     public static double parseDouble(String s) {
-        return 0;
+        if (s.isEmpty()) {
+            throw new IllegalArgumentException("Stringa vuota");
+        }
+
+        // TODO: implement here
+
     }
 
 }

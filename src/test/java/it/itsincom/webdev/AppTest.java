@@ -2,43 +2,35 @@ package it.itsincom.webdev;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Assertions;
 
 /**
  * Unit test for simple App.
  */
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
 class AppTest {
     /**
      * Rigorous Test.
      */
     @Test
-    public void parsedoubleShouldNotWorkOnWordAfterDot() {
+    public void parseDoubleShouldNotWorkOnWordAfterDot() {
         try {
             Double value = App.parseDouble("123.a");
             Assertions.fail(
                     "Parsedouble non può tornare un valore in caso di stringa con caratteri non numerici dopo il punto");
         } catch (IllegalArgumentException e) {
-            // TODO: handle exception
 
         }
-
     }
 
-    public void parsedoubleShouldNotWorkOnWordBeforDot() {
+    public void parseDoubleShouldNotWorkOnWordBeforeDot() {
         try {
             Double value = App.parseDouble("a.123");
             Assertions.fail(
                     "Parsedouble non può tornare un valore in caso di stringa con caratteri non numerici prima il punto");
         } catch (IllegalArgumentException e) {
-            // TODO: handle exception
 
         }
-
     }
 
     public void parsedoubleShouldNotWorkIfThereIsNothingAfterDot() {
@@ -46,10 +38,8 @@ class AppTest {
             Double value = App.parseDouble("123.");
             Assertions.fail("Parsedouble non può tornare un valore in caso di stringa senza caratteri dopo il punto");
         } catch (IllegalArgumentException e) {
-            // TODO: handle exception
 
         }
-
     }
 
     public void parsedoubleShouldNotWorkIfThereIsNothingBeforDot() {
@@ -57,10 +47,8 @@ class AppTest {
             Double value = App.parseDouble(".123");
             Assertions.fail("Parsedouble non può tornare un valore in caso di stringa senza caratteri prima il punto");
         } catch (IllegalArgumentException e) {
-            // TODO: handle exception
 
         }
-
     }
 
     public void parseDoubleShouldNotWorkOnEmptyString() {
@@ -93,7 +81,7 @@ class AppTest {
     }
 
     @Test
-    public void parseIntShouldWorkWithNegativeIntegers() {
+    public void parseIntShouldWorkWithNegativeNumbers() {
         try {
             Double value = App.parseDouble("-42.687");
             Assertions.assertEquals(-42.687, value);
@@ -102,14 +90,13 @@ class AppTest {
         }
     }
 
-
     @Test
     public void parseDoubleShouldNotWorkWithoutNumbers() {
         try {
             double value = App.parseDouble("ciao");
             Assertions.fail("La stringa inserita non contiene numeri");
         } catch (IllegalArgumentException e) {
-            
+
         }
     }
 
@@ -119,9 +106,7 @@ class AppTest {
             double value = App.parseDouble("12.56");
             Assertions.assertEquals(12.56, value);
         } catch (IllegalArgumentException e) {
-            
+
         }
     }
-
-    
 }

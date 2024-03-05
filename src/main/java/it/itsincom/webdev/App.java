@@ -1,7 +1,4 @@
 package it.itsincom.webdev;
-
-import java.util.Scanner;
-
 /**
  * Hello world!
  */

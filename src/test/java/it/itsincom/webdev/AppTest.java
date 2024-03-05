@@ -68,7 +68,7 @@ class AppTest {
             double value = App.parseDouble("");
             Assertions.fail("La stringa inserita è vuota");
         } catch (IllegalArgumentException e) {
-            
+
         }
     }
 
@@ -78,7 +78,7 @@ class AppTest {
             double value = App.parseDouble(null);
             Assertions.assertNotNull("Impossibile parsare una stringa di valore null");
         } catch (NullPointerException e) {
-            
+
         }
     }
 
@@ -88,9 +88,20 @@ class AppTest {
             double value = App.parseDouble("123");
             Assertions.fail("La stringa inserita è un numero intero");
         } catch (IllegalArgumentException e) {
-            
+
         }
     }
+
+    @Test
+    public void parseIntShouldWorkWithNegativeIntegers() {
+        try {
+            Double value = App.parseDouble("-42.687");
+            Assertions.assertEquals(-42.687, value);
+        } catch (IllegalArgumentException e) {
+
+        }
+    }
+
 
     @Test
     public void parseDoubleShouldNotWorkWithoutNumbers() {

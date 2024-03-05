@@ -54,7 +54,7 @@ class AppTest {
 
     public void parsedoubleShouldNotWorkIfThereIsNothingBeforDot() {
         try {
-            Double value = App.parseDouble("123.");
+            Double value = App.parseDouble(".123");
             Assertions.fail("Parsedouble non può tornare un valore in caso di stringa senza caratteri prima il punto");
         } catch (IllegalArgumentException e) {
             // TODO: handle exception
@@ -91,4 +91,26 @@ class AppTest {
             
         }
     }
+
+    @Test
+    public void parseDoubleShouldNotWorkWithoutNumbers() {
+        try {
+            double value = App.parseDouble("ciao");
+            Assertions.fail("La stringa inserita non contiene numeri");
+        } catch (IllegalArgumentException e) {
+            
+        }
+    }
+
+    @Test
+    public void parseDoubleShouldWorkWithDecimalNumber() {
+        try {
+            double value = App.parseDouble("12.56");
+            Assertions.assertEquals(12.56, value);
+        } catch (IllegalArgumentException e) {
+            
+        }
+    }
+
+    
 }
